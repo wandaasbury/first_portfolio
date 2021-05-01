@@ -1,0 +1,247 @@
+:root {
+  --blue: #343467;
+  --rose: #964c65;
+  --coral: #ff6666;
+  --peach: #ffb399;
+  --yellow: #ffffcd;
+}
+
+body{
+  font-family: serif;
+}
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: serif;
+}
+
+header{
+  height: 100%;
+}
+
+.header-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("face.png");
+  width: 100%;
+  height: 90vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.header-text p {
+  font-size: 30px;
+}
+
+nav{
+  float: right;
+}
+
+.identity{
+  float: left;
+}
+
+nav ul {
+
+  display: flex;
+
+  list-style: none;
+
+}
+
+nav a {
+
+   color: var(--yellow);
+
+   font-weight: bold;
+
+   display: block;
+
+   padding: 15px;
+
+   text-decoration: none;
+
+ }
+
+h1 {
+  text-align: center;
+  font-family: 'Marko One', serif;
+  font-size: 40px;
+}
+
+section p, .projects-list{
+  text-align: center;
+  margin: 0 300px 0 300px;
+}
+
+.servicedesign, .podcast, .mowabrands p{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.mtlinks{
+ display: inline-grid;
+ grid-template-columns: auto auto auto;
+ padding: 10px;
+ grid-gap: 5px;
+ margin-left: 150px;
+ margin-top: 50px;
+}
+
+.aboutme, .projects, .mythoughts, .flip-box {
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+.servicedesign, .podcast, .mowabrands {
+
+  margin-top: 200px;
+}
+
+.back-home a{
+  font-size:50px;
+  text-decoration: none;
+  color: black;
+  }
+
+.back-home:hover a{
+  color: var(--yellow);
+}
+
+.video {
+  width: 560px;
+  height: 315px;
+}
+
+.flip-box {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  margin-top: 50px;
+  border: none;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-box-front {
+  background-color: none;
+  color: black;
+}
+
+/* Style the back side */
+.flip-box-back {
+  background-color: var(--blue);
+  color: white;
+  transform: rotateY(180deg);
+  border-radius: 25%;
+}
+
+.flip-box-front img, .flip-box-back img{
+  width:300px;
+  height:200px;
+  border-radius: 25%;
+}
+
+.flip-box-back h2 {
+  position: relative;
+  top: 50px;
+}
+
+.flip-boxes{
+  display: grid;
+  grid-auto-flow: column;
+  gap: 4px;
+  align-items: center;
+  justify-items: center;}
+
+ul{
+  list-style: none;
+}
+
+.social ul {
+  display: inline-grid;
+  grid-auto-flow: row;
+  grid-gap: 24px;
+  justify-items: center;
+  margin: auto;
+}
+
+@media (min-width: 500px) {
+  .social ul {
+    grid-auto-flow: column;
+  }
+}
+
+.social a {
+  color: white;
+  text-decoration: none;
+  box-shadow: inset 0 -1px 0 hsla(0, 0%, 100%, 0.4);
+}
+
+.social a:hover {
+  box-shadow: inset 0 -1.2em 0 hsla(0, 0%, 100%, 0.4);
+}
+
+.social li:last-child {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.social li:hover ~ li p {
+  animation: wave-animation 0.3s infinite;
+}
+
+/* below is just for demo styling */
+
+.social {
+  display: flex;
+  background-color: var(--coral);
+  line-height: 1.3;
+  font-family: Menlo, monospace;
+}
+
+@keyframes wave-animation {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+}
