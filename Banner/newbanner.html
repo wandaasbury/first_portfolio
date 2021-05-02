@@ -1,0 +1,77 @@
+<html>
+<head>
+	<style type="text/css">
+		.centered{
+		text-align: center;
+		margin-top: 5%;
+		}
+
+		body{
+			font-family: Marko One;
+
+		}
+	</style>
+<link href="https://fonts.googleapis.com/css2?family=Marko+One&display=swap" rel="stylesheet">
+</head>
+
+<body onload="rotate()">
+ <div class="centered">
+ 	<h1>enjoy life</h1>
+    <img src="banner1.jpg" id="adBanner" alt="Ad Banner">
+ </div>
+     <script>
+
+ // banner height & width
+
+document.getElementById("adBanner").style.width = "720px";
+document.getElementById("adBanner").style.height = "400px";
+
+
+ //banner count 
+
+var bCount = 0;
+
+ //rotate time
+
+ var time = 3000;
+
+// create function to create banner cycle
+     // set banner count to increase by 1
+      // create if statement if (banner count is equal to image array number set banner count to 0) 
+
+       
+      // using document object set img scr to image in array 
+
+     // create setTimeout for banner
+     
+
+     function rotate(){
+
+     //array of images 
+
+     	var myImages = new Array ("banner1.jpg", "banner2.jpg", "banner3.jpg");
+     
+     // banner count increase by 1
+     	bCount++
+
+     //banner count is equal to image array number set banner count to 0
+
+     	if (bCount == myImages.length)	
+     		{bCount=0
+     	}
+     // sets img scr to image in array 
+
+     	document.getElementById("adBanner").src = myImages[bCount];
+
+      // img rotate inverval
+
+      	setTimeout("rotate()", time);
+
+     	}
+
+
+     
+
+</script>
+</body>
+</html>
